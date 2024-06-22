@@ -1,0 +1,90 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+
+<section class="favoritos">
+    <h2>Favoritos de <%= usuarioFavoritos.nombre_usuario %></h2>
+
+    <div class="div-favoritos">
+        <% usuarioFavoritos.productos_favoritos.forEach(productoFavoritos => { %>
+            <% if (productoFavoritos.producto_favoritos) { %>
+                <div class="favoritos-card">
+                    <div class="img-fovoritos">
+                        <img src="/imagenes/<%= productoFavoritos.producto_favoritos.imagen %>">
+                    </div>
+
+                    <div class="informacion-favoritos">
+                        <h2><%= productoFavoritos.producto_favoritos.nombre_producto %></h2>
+                        <p class="precio">$ <%= productoFavoritos.producto_favoritos.precio %></p>
+                        <p class="descripcion"><%= productoFavoritos.producto_favoritos.descripcion %></p>
+                    </div>
+
+                    <form class="btnFavoritos" id="form-eliminarFavoritos"
+                          action="/productos/eliminarDeFavoritos/<%= productoFavoritos.producto_favoritos._id %>?_method=DELETE"
+                          method="post">
+                        <button type="submit" id="EliminarDeFavoritos-btn"><i class="fas fa-trash"></i></button>
+                    </form>
+                </div>
+            <% } %>
+        <% }); %>
+
+        <% if (usuarioFavoritos.productos_favoritos.length === 0) { %>
+            <p class="sinProductos">No hay productos marcados como favoritos</p>
+        <% } %>
+    </div>
+</section>
+
+<script>
+        // Mensajes de confirmación para eliminar el producto de los favoritos
+        document.querySelectorAll('#EliminarDeFavoritos-btn').forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const form = e.target.closest('form');
+
+            Swal.fire({
+                title: '¿Estás seguro que quieres eliminar el producto?',
+                text: "Por favor, confirmá si querés quitar este producto de los favoritos",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const formData = new URLSearchParams(new FormData(form));
+                    fetch(form.action, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: formData
+                    }).then(response => response.json()).then(result => {
+                        if (result.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'El producto fue eliminado',
+                                text: result.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            }).then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error al eliminar producto',
+                                text: result.message
+                            });
+                        }
+                    }).catch(error => {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Ocurrió un error al eliminar el producto'
+                        });
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+    <%- include('../partials/footer')%>

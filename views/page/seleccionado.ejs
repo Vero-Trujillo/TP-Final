@@ -1,0 +1,96 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+
+<section class="seleccionado">
+    <div class="seleccionado-izq">
+        <img src="/imagenes/<%= producto.imagen %>" alt="">
+    </div>
+
+    <div class="seleccionado-derecha">
+        <div class="informacion">
+            <div class="informacion-titulo">
+                <h3><%= producto.nombre_producto %></h3>
+                <% if (usuario) { %>
+                    <button id="btn-favorito" class="btn-favorito" data-producto-id="<%= producto._id %>">
+                        <i class="fas fa-heart <%= esFavorito ? 'colorCorazon' : '' %>"></i>
+                    </button>
+                <% } %>
+            </div>
+            <p>Categoría: <%= producto.tipo %></p>
+            <p><%= producto.descripcion %></p>
+            <p class="precio">Precio: $ <%= producto.precio %></p>
+        </div>
+
+        <div class="seleccionado-botones">
+            <button id="volver-btn" type="button">Volver</button>
+            <form id="form-carrito" method="POST" action="/productos/agregarAlCarrito">
+                <input type="hidden" name="producto_carrito" value="<%= producto._id %>">
+                <button type="submit">Agregar al carrito</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <script>
+        // Evento de clickear en el botón "Volver"
+        document.getElementById("volver-btn").addEventListener("click", () => {
+            history.back();
+        });
+
+        // Mensajes al clickear en el botón "Agregar al carrito"
+        document.getElementById('form-carrito').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new URLSearchParams(new FormData(form));
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Producto agregado al carrito!',
+                    text: result.message,
+                    showConfirmButton: false,
+                    timer: 3500
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error al agregar producto',
+                    text: result.message
+                });
+            }
+        });
+
+        // Script para que cambie el color del ícono de corazón cuando se agrega un producto a favoritos
+        document.getElementById('btn-favorito').addEventListener('click', function (event) {
+        const productoId = this.getAttribute('data-producto-id');
+        fetch('/productos/agregarAFavoritos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ producto_favoritos: productoId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const heartIcon = document.querySelector('#btn-favorito i');
+                if (data.action === 'added') {
+                    heartIcon.classList.add('colorCorazon');
+                } else if (data.action === 'removed') {
+                    heartIcon.classList.remove('colorCorazon');
+                }
+            } else {
+                alert(data.message || 'Error al actualizar favoritos');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    </script>
+
+    <%- include('../partials/footer')%>

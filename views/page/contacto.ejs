@@ -1,0 +1,73 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+
+    <section class="contacto">
+        <img src="imagenes/Fondo formularios.jpg" alt="">
+
+        <div class="contacto-formulario">
+            
+            <div class="contacto-titulo">
+                <h1>Contacto</h1>
+                <p>Completá el formulario y te responderemos a la brevedad</p>
+            </div>
+
+            <form id="form-contacto" action='/' method="post">
+
+                <div class="contacto-form-datos">
+                    <div class="contacto-nombre">
+                        <label for="">Nombre y apellido *</label>
+                        <input type="text" name="nombreContacto" id="nombreContacto" required>
+                    </div>
+                    <div class="contacto-mail">
+                        <label for="">E-mail *</label>
+                        <input type="email" name="mailContacto" required>
+                    </div>
+                </div>
+
+                <div class="contacto-mje">
+                    <label for="">Consulta o comentario *</label>
+                    <textarea name="mensajeContacto" id="" rows="10" required></textarea>
+                </div>
+
+                <button>Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('form-contacto').addEventListener('submit', async function (e) {
+            e.preventDefault();
+    
+            const form = e.target;
+            const formData = new URLSearchParams(new FormData(form));
+    
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData
+            });
+    
+            const result = await response.json();
+    
+            if (result.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Mensaje enviado!',
+                    text: result.message,
+                    showConfirmButton: false,
+                    timer: 5000
+                }).then(() => {
+                    window.location.href = '/';
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: result.message
+                });
+            }
+        });
+    </script>
+
+    <%- include('../partials/footer')%>

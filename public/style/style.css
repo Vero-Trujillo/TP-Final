@@ -1,0 +1,1034 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: beige;
+    overflow-x: hidden;
+}
+
+:root {
+    --colorFondoMenu: rgb(60, 182, 212);
+    --colorFondoFooter: rgb(59, 59, 59);
+    --colorHoverMenu: rgb(124, 122, 122);
+    --colorHoverBotones: rgb(35, 128, 151);
+    --colorFondoFormularios: beige;
+}
+
+:root {
+    --tipografiaTitulos: cursive;
+    --tipografiaTextos: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ----------------- MENÚ DE NAVEGACIÓN ---------------------- */
+header {
+    padding: 10px 50px;
+    display: flex;
+    background-color: var(--colorFondoMenu);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-header-logo,
+nav,
+.div-header-iconos {
+    display: flex;
+    align-items: center;
+}
+
+.div-header-logo img {
+    width: 125px;
+    height: 100px;
+}
+
+nav a {
+    margin: 20px;
+    text-decoration: none;
+    color: var(--colorFondoFooter);
+    font-size: 1.2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--colorHoverMenu);
+}
+
+.div-header-logo a,
+.div-header-iconos a {
+    margin: 20px;
+    text-decoration: none;
+    color: var(--colorFondoFooter);
+    font-size: 1.2em;
+    font-family: var(--tipografiaTextos);
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.div-header-logo a:hover,
+.div-header-iconos a:hover {
+    color: var(--colorHoverMenu);
+}
+
+.div-header-logo a i,
+.div-header-iconos a i {
+    font-size: 25px;
+    transition: color 0.3s;
+}
+
+.div-header-logo a i:hover,
+.div-header-iconos a i:hover {
+    color: var(--colorHoverMenu);
+}
+
+.contenedor-iconos-perfil {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-iconos-perfil p {
+    font-family: var(--tipografiaTitulos);
+    color: var(--colorFondoFooter);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+/* ----------------- FOOTER ---------------------- */
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--colorFondoFooter);
+    display: flex;
+    align-items: center;
+}
+
+.div-informacion {
+    width: 33.3%;
+}
+
+.div-direccion {
+    display: flex;
+}
+
+.div-direccion i {
+    font-size: 20px;
+    color: var(--colorFondoMenu);
+    margin-left: 40px;
+}
+
+.div-direccion p {
+    color: var(--colorFondoMenu);
+    font-family: var(--tipografiaTextos);
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.div-horario p {
+    color: var(--colorFondoMenu);
+    font-family: var(--tipografiaTextos);
+    font-size: 0.8em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.div-footer-logo {
+    width: 33.3%;
+    display: flex;
+}
+
+.div-footer-logo img {
+    width: 100px;
+    height: 80px;
+    margin: auto;
+}
+
+.div-redes {
+    width: 33.3%;
+    display: flex;
+}
+
+.div-redes i {
+    font-size: 40px;
+    color: var(--colorFondoMenu);
+    margin-inline-start: 90px;
+    transition: color 0.5s;
+}
+
+.div-redes i:hover {
+    cursor: pointer;
+    color: var(--colorFondoFormularios);
+}
+
+/* ----------------- INICIO ---------------------- */
+.banner {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.nuestrosProductos-titulo {
+    padding: 10px;
+    margin: 30px 0;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.inicio-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.div-categoria {
+    border-radius: 30px;
+    background-color: var(--colorFondoMenu);
+    margin: 0 30px;
+}
+
+.div-categoria a {
+    text-decoration: none;
+    color: black;
+}
+
+.div-categoria-img {
+    width: 350px;
+    height: 300px;
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.div-categoria-img img {
+    width: 100%;
+    height: 100%;
+    transition: 1.5s ease;
+}
+
+.div-categoria:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+.div-categoria a:hover img {
+    transform: scale(1.1);
+}
+
+.div-categoria h2 {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+/* ----------------- SOBRE NOSOTROS ---------------------- */
+.nosotros {
+    height: 450px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nosotros-izq {
+    width: 50%;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 3px rgb(39, 105, 69);
+}
+
+.nosotros-izq h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: var(--tipografiaTitulos);
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(39, 105, 69);
+}
+
+.nosotros-izq p {
+    margin: 30px 0 30px 40px;
+    text-align: justify;
+    line-height: 30px;
+    font-family: var(--tipografiaTextos);
+    font-size: 1.3em;
+    font-style: italic;
+    color: var(--colorFondoFooter);
+}
+
+.nosotros-izq p::first-letter {
+    font-family: var(--tipografiaTitulos);
+    color: rgb(39, 105, 69);
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.nosotros img {
+    width: 35%;
+    padding: 20px;
+    margin-right: 40px;
+    border-radius: 30px;
+    box-shadow: -5px -5px 3px rgb(39, 105, 69);
+}
+
+/* ----------------- FORMULARIO DE CONTACTO ---------------------- */
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.contacto img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.contacto-formulario {
+    background-color: var(--colorFondoFormularios);
+    width: 500px;
+    padding: 50px;
+    margin: 80px 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px var(--colorFondoMenu);
+    position: relative;
+}
+
+.contacto-titulo {
+    margin-bottom: 30px;
+}
+
+.contacto-titulo h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: var(--tipografiaTitulos);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.contacto-titulo p {
+    text-align: center;
+    font-family: var(--tipografiaTextos);
+    font-size: 1em;
+    color: var(--colorFondoFooter);
+}
+
+.contacto-form-datos {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacto-nombre,
+.contacto-mail {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-mje {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form-datos label,
+.contacto-mje label {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-align: justify;
+    font-family: var(--tipografiaTextos);
+    font-size: 1em;
+    color: var(--colorFondoFooter);
+}
+
+.contacto-form-datos input {
+    width: 100%;
+    padding: 10px;
+    border: 1px dotted var(--colorFondoFooter);
+    border-radius: 5px;
+}
+
+.contacto-mje textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+    border: 1px dotted var(--colorFondoFooter);
+    border-radius: 5px;
+}
+
+.contacto-formulario button {
+    padding: 10px 20px;
+    background-color: var(--colorFondoMenu);
+    font-family: var(--tipografiaTextos);
+    font-size: 1.2em;
+    font-weight: 550;
+    color: var(--colorFondoFooter);
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    left: 45%;
+    bottom: 5%;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.contacto-formulario button:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+/* -- PRODUCTOS: PANES / PANIFICADOS SALADOOS / PANIFICADOS DULCES / MASAS -- */
+
+.productos-titulo {
+    padding: 10px;
+    margin: 30px 0;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.productos-div {
+    margin-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.productos-card {
+    width: 250px;
+    height: 250px;
+    margin: 0 30px;
+    background-color: var(--colorFondoMenu);
+    border-radius: 30px;
+}
+
+.productos-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card-img {
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.card-img img {
+    width: 250px;
+    height: 170px;
+    transition: 1.5s ease;
+}
+
+.productos-card:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+.productos-card a:hover img {
+    transform: scale(1.1);
+}
+
+.productos-card h3 {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.1em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.productos-card p {
+    padding: 5px;
+    text-align: center;
+    font-size: 1em;
+    font-family: var(--tipografiaTextos);
+    font-weight: bold;
+}
+
+/* ----------------- PRODUCTO SELECCIONADO ---------------------- */
+
+.seleccionado {
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.seleccionado-izq img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.seleccionado-derecha {
+    padding: 15px;
+    width: 30%;
+    height: auto;
+    align-content: center;
+    border-radius: 20px;
+    box-shadow: -2px -2px 3px var(--colorFondoMenu);
+}
+
+.informacion {
+    margin-left: 30px;
+}
+
+.informacion-titulo {
+    display: flex;
+}
+
+.informacion-titulo h3 {
+    margin: 30px 0;
+    font-size: 1.2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.informacion-titulo .btn-favorito {
+    margin-left: 30px;
+    margin-top: 20px;
+    border: none;
+}
+
+.informacion-titulo button i {
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #ccc;
+}
+
+.informacion-titulo .btn-favorito i:hover {
+    color: pink;
+}
+
+.informacion-titulo button i.colorCorazon {
+    color: rgb(216, 216, 20);
+}
+
+.informacion p {
+    margin: 15px 0;
+    font-size: 1em;
+    font-family: var(--tipografiaTextos);
+}
+
+.informacion .precio {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.seleccionado-botones {
+    margin-left: 30px;
+    display: flex;
+}
+
+.seleccionado-botones button {
+    margin: 30px 20px 30px 0;
+    width: 145px;
+    height: 50px;
+    background-color: var(--colorFondoMenu);
+    border: none;
+    border-radius: 15px;
+    font-family: var(--tipografiaTextos);
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--colorFondoFooter);
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.seleccionado-botones button:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+/* ----------------- FORMULARIO DE LOGIN---------------------- */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.login img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.login-formulario {
+    background-color: var(--colorFondoFormularios);
+    width: 320px;
+    padding: 20px 50px;
+    margin: 50px 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px var(--colorFondoMenu);
+    position: relative;
+}
+
+.login-formulario h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: var(--tipografiaTitulos);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.login-formulario form {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-formulario form label {
+    width: 80px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1.5em;
+    color: var(--colorFondoFooter);
+}
+
+.login-formulario form input {
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 60px;
+    border: 1px dotted var(--colorFondoFooter);
+    border-radius: 5px;
+}
+
+.login-formulario form input::placeholder {
+    font-family: var(--tipografiaTextos);
+    color: var(--colorFondoFooter);
+}
+
+.cambiar-password i {
+    margin-left: 10px;
+    font-size: 1.1em;
+    color: var(--colorFondoFooter);
+}
+
+.login-formulario form button {
+    padding: 10px 20px;
+    background-color: var(--colorFondoMenu);
+    font-family: var(--tipografiaTextos);
+    font-size: 1.2em;
+    font-weight: 550;
+    color: var(--colorFondoFooter);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.login-formulario form button:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+.linkLogin p {
+    font-family: var(--tipografiaTextos);
+    font-size: 15px;
+    color: var(--colorFondoFooter);
+}
+
+.linkLogin a {
+    font-family: var(--tipografiaTextos);
+    font-size: 15px;
+}
+
+/* ----------------- FORMULARIO DE REGISTRO---------------------- */
+
+.registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.registro img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.registro-formulario {
+    background-color: var(--colorFondoFormularios);
+    width: 400px;
+    padding: 20px 50px;
+    margin: 50px 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px var(--colorFondoMenu);
+    position: relative;
+}
+
+.registro-formulario h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: var(--tipografiaTitulos);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.registro-formulario form {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registro-formulario form label {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1.2em;
+    color: var(--colorFondoFooter);
+}
+
+.registro-formulario form input {
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 40px;
+    border: 1px dotted var(--colorFondoFooter);
+    border-radius: 5px;
+}
+
+.registro-formulario form input::placeholder {
+    font-family: var(--tipografiaTextos);
+    color: var(--colorFondoFooter);
+}
+
+.registro-formulario form button {
+    padding: 10px 20px;
+    background-color: var(--colorFondoMenu);
+    font-family: var(--tipografiaTextos);
+    font-size: 1.2em;
+    font-weight: 550;
+    color: var(--colorFondoFooter);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.registro-formulario form button:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+.linkRegistro {
+    text-align: center;
+}
+
+.linkRegistro p {
+    font-family: var(--tipografiaTextos);
+    font-size: 15px;
+    color: var(--colorFondoFooter);
+}
+
+.linkRegistro a {
+    font-family: var(--tipografiaTextos);
+    font-size: 15px;
+}
+
+/* ----------------- CARRITO ---------------------- */
+
+.carrito h2 {
+    padding: 10px;
+    margin: 30px 0;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.div-carrito {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    gap: 80px;
+}
+
+.div-izq {
+    width: 750px;
+    margin-left: 50px;
+}
+
+.productoCarrito {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: black;
+    display: flex;
+    gap: 20px;
+}
+
+.div-imagen img {
+    margin-left: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.nombre {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nombre h2 {
+    margin: 20px;
+    font-size: 1.2em;
+    font-family: var(--tipografiaTextos);
+    font-weight: bold;
+}
+
+.nombre button {
+    margin-top: 20px;
+    border: none;
+    background: none;
+}
+
+.nombre button i {
+    font-size: 1.5em;
+    color: var(--colorFondoFooter);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nombre button i:hover {
+    color: red;
+}
+
+.div-btnCantidad {
+    margin: auto 0;
+    width: 90px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: var(--colorHoverMenu);
+    display: flex;
+}
+
+.div-btnCantidad button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: var(--colorFondoFooter);
+    cursor: pointer;
+}
+
+.div-btnCantidad input {
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    font-family: var(--tipografiaTextos);
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+
+.div-precioCarrito {
+    margin-left: 10px;
+    margin-top: 33px;
+}
+
+.precioCarrito {
+    font-family: var(--tipografiaTextos);
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+.div-izq p {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: var(--tipografiaTextos);
+}
+
+.div-der {
+    padding: 20px;
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: sticky;
+    top: 150px;
+    right: 50px;
+}
+
+.div-der .cantidadProductos {
+    margin-bottom: 20px;
+    font-family: var(--tipografiaTextos);
+    font-size: 1em;
+
+}
+
+.div-der .precioTotal {
+    margin-bottom: 30px;
+    font-family: var(--tipografiaTextos);
+    font-size: 1.5em;
+}
+
+.div-der a button {
+    width: 200px;height: 50px;
+    padding: 5px 20px;
+    background-color: var(--colorFondoMenu);
+    font-family: var(--tipografiaTextos);
+    font-size: 1.2em;
+    font-weight: 550;
+    color: var(--colorFondoFooter);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.div-der a button:hover {
+    background-color: var(--colorHoverBotones);
+}
+
+/* ----------------- FAVORITOS ---------------------- */
+
+.favoritos h2 {
+    padding: 10px;
+    margin: 30px 0;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.div-favoritos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favoritos-card {
+    width: 75%;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: black;
+    display: flex;
+}
+
+.img-fovoritos img {
+    margin: 0 30px;
+    border-radius: 50px;
+    width: 250px;
+    height: 200px;
+}
+
+.informacion-favoritos {
+    max-width: 40%;
+}
+
+.informacion-favoritos h2 {
+    margin: 10px 0 30px 0;
+    text-align: start;
+    font-size: 1.1em;
+    font-family: var(--tipografiaTitulos);
+}
+
+.informacion-favoritos .precio {
+    margin: 0 0 40px 10px;
+    text-align: start;
+    font-size: 1em;
+    font-family: var(--tipografiaTextos);
+    font-weight: bold;
+}
+
+.informacion-favoritos .descripcion {
+    margin: 0 0 30px 10px;
+    text-align: justify;
+    font-size: 0.8em;
+    font-family: var(--tipografiaTextos);
+}
+
+.btnFavoritos {
+    display: flex;
+    justify-content: center;
+}
+
+.btnFavoritos button {
+    border: none;
+    background: none;
+}
+
+.btn-favorito i {
+    margin: 0 0 30px 40px;
+    color: #ccc;
+}
+
+.btnFavoritos button i {
+    font-size: 2em;
+    color: var(--colorFondoFooter);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btnFavoritos button i:hover {
+    color: red;
+}
+
+.div-favoritos .sinProductos {
+    margin-bottom: 200px;
+    font-family: var(--tipografiaTextos);
+    font-size: 1.5em;
+}
+
+/* ----------------- COMPRA REALIZADA ---------------------- */
+
+.compraRealizada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.compraRealizada h2 {
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--tipografiaTitulos);
+    font-weight: bold;
+}
+
+.compraRealizada img {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 400px;
+    height: auto;
+}

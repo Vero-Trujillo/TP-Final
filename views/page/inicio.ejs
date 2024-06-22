@@ -1,0 +1,44 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+    <main>
+        <img class="banner" src="/imagenes/banner.jpg" alt="Banner">
+    </main>
+
+    <section class="inicio">
+        <h2 class="nuestrosProductos-titulo">Conocé nuestros productos</h2>
+
+        <div class="inicio-productos">
+
+            <div class="div-categoria">
+                <a href="/productos/panes">
+                    <div class="div-categoria-img"><img src="/imagenes/Pan.jpg" alt="Panes"></div>
+                    <h2>Panes</h2>
+                </a>
+
+            </div>
+
+            <div class="div-categoria">
+                <a href="/productos/salados">
+                    <div class="div-categoria-img"><img src="/imagenes/Panificados salados.jpg"
+                            alt="Panificados Salados"></div>
+                    <h2>Panificados salados</h2>
+                </a>
+            </div>
+
+            <div class="div-categoria">
+                <a href="/productos/dulces">
+                    <div class="div-categoria-img"><img src="/imagenes/Panificados dulces.jpg" alt="Panificados Dulces">
+                    </div>
+                    <h2>Panificados dulces</h2>
+                </a>
+            </div>
+
+            <div class="div-categoria">
+                <a href="/productos/masas">
+                    <div class="div-categoria-img"><img src="/imagenes/Masas.jpg" alt="Masas"></div>
+                    <h2>Masas</h2>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer')%>

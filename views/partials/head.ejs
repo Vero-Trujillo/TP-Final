@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link al CSS -->
+    <link rel="stylesheet" href="/style/style.css">
+    <!-- Link a la librería de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Link a la librería de Sweet Alert 2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <title>Peter Pan</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="div-header-logo">
+            <img src="/imagenes/Logo.png" alt="logo">
+            <a href="/"><i class="fas fa-house"></i></a>
+            <a href="/contacto"><i class="fas fa-envelope"></i></a>
+            <a href="/nosotros">Sobre<br>nosotros</a>
+        </div>
+
+        <nav>
+            <a href="/productos/panes">Panes</a>
+            <a href="/productos/salados">Panificados<br>salados</a>
+            <a href="/productos/dulces">Panificados<br>dulces</a>
+            <a href="/productos/masas">Masas</a>
+        </nav>
+
+        <div class="div-header-iconos">
+            <% if (!usuario) { %>
+                <a href="/usuarios/registro">Creá tu<br>cuenta</a>
+                <a href="/usuarios/login"><i class="fas fa-user"></i></a>
+            <% } else { %>
+                <div class="contenedor-iconos-perfil">
+                <p><i class="far fa-face-smile"></i> <%= usuario.nombre_usuario %></p>
+                <div class="iconos-perfil">
+                <a id="cerrar-sesion" href="/usuarios/logout">Cerrar sesión</a>
+                <a href="/productos/favoritos"><i class="fas fa-heart"></i></a>
+                <a href="/productos/carrito"><i class="fas fa-cart-shopping"></i></a>
+            </div>
+        </div>
+            <% } %>
+        </div>
+    </header>

@@ -1,0 +1,23 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+
+    <section class="productos">
+        <h2 class="productos-titulo">Panificados salados</h2>
+
+        <div class="productos-div">
+            <% productos.forEach(producto=> { %>
+
+                <div class="productos-card">
+                    <a href="/productos/productoSeleccionado/<%= producto.id %>">
+                        <div class="card-img"><img src="/imagenes/<%= producto.imagen %>" alt=""></div>
+                        <h3><%= producto.nombre_producto %></h3>
+                        <p>Precio: $ <%= producto.precio %></p>
+                    </a>
+                </div>
+
+                <% }) %>
+        </div>
+
+    </section>
+
+
+    <%- include('../partials/footer')%>

@@ -1,0 +1,115 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+
+    <section class="carrito">
+        <h2>Mi carrito</h2>
+
+        <div class="div-carrito">
+
+            <div class="div-izq">
+                <% if (usuarioCarrito.productos_carrito.length> 0) { %>
+                    <% usuarioCarrito.productos_carrito.forEach(productoCarrito=> { %>
+
+                        <div class="productoCarrito" data-producto-id="<%= productoCarrito.producto_carrito._id %>">
+
+                            <div class="div-imagen">
+                                <img src="/imagenes/<%= productoCarrito.producto_carrito.imagen %>">
+                            </div>
+
+                            <div class="nombre">
+                                <h2><%= productoCarrito.producto_carrito.nombre_producto %></h2>
+                                <form id="form-eliminarCarrito"
+                                    action="/productos/eliminarDelCarrito/<%= productoCarrito.producto_carrito._id %>?_method=DELETE"
+                                    method="post">
+                                    <button type="submit" id="EliminarDelCarrito-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="div-btnCantidad">
+                                <button type="submit" class="btn-cantidad menos" data-producto-id="<%= productoCarrito.producto_carrito._id %>">-</button>
+                                <input class="cantidad-input" type="text" value="<%= productoCarrito.cantidad %>" data-producto-id="<%= productoCarrito.producto_carrito._id %>">
+                                <button type="submit" class="btn-cantidad mas" data-producto-id="<%= productoCarrito.producto_carrito._id %>">+</button>
+                            </div>
+
+                            <div class="div-precioCarrito">
+                                <p class="precioCarrito" data-producto-id="<%= productoCarrito.producto_carrito._id %>" data-precio="<%= productoCarrito.producto_carrito.precio %>">
+                                    $ <%= productoCarrito.producto_carrito.precio %>
+                                </p>
+                            </div>
+
+                        </div>
+                        <% }); %>
+
+                            <% } else { %>
+                                <p>No hay productos en el carrito</p>
+                                <% } %>
+            </div>
+
+            <div class="div-der">
+                <p class="cantidadProductos">Cantidad de productos: <%= usuarioCarrito.productos_carrito.reduce((total, productoCarrito) => total + productoCarrito.cantidad, 0) %></p>
+                <p class="precioTotal">Total: <strong id="totalCarrito">$ <%= usuarioCarrito.productos_carrito.reduce((total, productoCarrito)=> {
+                            return total + (productoCarrito.producto_carrito.precio * productoCarrito.cantidad);
+                            }, 0) %></strong></p>
+                <a href="/compra" target="_blank"><button class="btn-comprar">Comprar</button></a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Mensajes de confirmación para eliminar el producto del carrito
+        document.querySelectorAll('#EliminarDelCarrito-btn').forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const form = e.target.closest('form');
+
+            Swal.fire({
+                title: '¿Estás seguro que quieres eliminar el producto?',
+                text: "Por favor, confirmá si querés quitar este producto del carrito",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const formData = new URLSearchParams(new FormData(form));
+                    fetch(form.action, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: formData
+                    }).then(response => response.json()).then(result => {
+                        if (result.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'El producto fue eliminado',
+                                text: result.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            }).then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error al eliminar producto',
+                                text: result.message
+                            });
+                        }
+                    }).catch(error => {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Ocurrió un error al eliminar el producto'
+                        });
+                    });
+                }
+            });
+        });
+    });
+    </script>
+
+    <%- include('../partials/footer')%>

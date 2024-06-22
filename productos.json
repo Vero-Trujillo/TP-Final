@@ -1,0 +1,212 @@
+[
+    {
+      "nombre_producto": "Pan francés",
+      "categoria": "Panes",
+      "tipo": "Pan de mesa",
+      "descripcion": "Tira de pan blanco preparado con harina de trigo refinada",
+      "imagen": "Pan francés.jpg",
+      "precio": 2500
+    },
+    {
+      "nombre_producto": "Pan integral",
+      "categoria": "Panes",
+      "tipo": "Pan de mesa",
+      "descripcion": "Bollos de pan integral preparados con harina de trigo integral",
+      "imagen": "Pan integral.jpg",
+      "precio": 3000
+    },
+    {
+      "nombre_producto": "Pan de lomo",
+      "categoria": "Panes",
+      "tipo": "Pan de sándwiche",
+      "descripcion": "Pan para sándwiches de lomitos",
+      "imagen": "Pan de lomo.jpg",
+      "precio": 4300
+    },
+    {
+      "nombre_producto": "Criollo común",
+      "categoria": "Panificados salados",
+      "tipo": "Pan criollo",
+      "descripcion": "Pan preparado con harina de trigo y grasa vacuna (grase de pella)",
+      "imagen": "Criollo común.jpg",
+      "precio": 4000
+    },
+    {
+      "nombre_producto": "Criollo de hojaldre",
+      "categoria": "Panificados salados",
+      "tipo": "Pan criollo",
+      "descripcion": "Pan criollo preparado con masa de hojaldre",
+      "imagen": "Criollo de hojaldre.jpg",
+      "precio": 5000
+    },
+    {
+      "nombre_producto": "Chipaca",
+      "categoria": "Panificados salados",
+      "tipo": "Pan criollo",
+      "descripcion": "Pequeña tortilla preparada con harina de trigo, grasa vacuna (grase de pella) y chicharrón",
+      "imagen": "Chipaca.jpg",
+      "precio": 4500
+    },
+    {
+      "nombre_producto": "Chipá",
+      "categoria": "Panificados salados",
+      "tipo": "Especialidades saladas",
+      "descripcion": "Pan de queso preparado con almidón de mandioca y queso",
+      "imagen": "Chipá.jpg",
+      "precio": 6000
+    },
+    {
+      "nombre_producto": "Chalitas",
+      "categoria": "Panificados salados",
+      "tipo": "Especialidades saladas",
+      "descripcion": "Galleta salada en forma de cinta con semillas",
+      "imagen": "Chalitas.jpg",
+      "precio": 4500
+    },
+    {
+      "nombre_producto": "Marineras",
+      "categoria": "Panificados salados",
+      "tipo": "Especialidades saladas",
+      "descripcion": "Galletas marineras preparadas con harina de trigo",
+      "imagen": "Marineras.jpg",
+      "precio": 4500
+    },
+    {
+      "nombre_producto": "Criollo dulce",
+      "categoria": "Panificados dulces",
+      "tipo": "Pan criollo",
+      "descripcion": "Pan preparado con harina de trigo, grasa vacuna (grase de pella). Espolvoreado con azucar",
+      "imagen": "Criollo dulce.jpg",
+      "precio": 4000
+    },
+    {
+      "nombre_producto": "Medialuna",
+      "categoria": "Panificados dulces",
+      "tipo": "Factura",
+      "descripcion": "Factura dulce en forma de media luna",
+      "imagen": "Medialuna.jpg",
+      "precio": 9000
+    },
+    {
+      "nombre_producto": "Medialuna con dulce de leche",
+      "categoria": "Panificados dulces",
+      "tipo": "Factura",
+      "descripcion": "Factura en forma de media luna rellena con dulce de leche repostero",
+      "imagen": "Medialuna con dulce de leche.jpg",
+      "precio": 9000
+    },
+    {
+      "nombre_producto": "Factura con crema",
+      "categoria": "Panificados dulces",
+      "tipo": "Factura",
+      "descripcion": "Factura con crema pastelera",
+      "imagen": "Factura con crema.jpg",
+      "precio": 10000
+    },
+    {
+      "nombre_producto": "Factura con membrillo",
+      "categoria": "Panificados dulces",
+      "tipo": "Factura",
+      "descripcion": "Factura con dulce de membrillo",
+      "imagen": "Factura con membrillo.jpg",
+      "precio": 10000
+    },
+    {
+      "nombre_producto": "Vigilante",
+      "categoria": "Panificados dulces",
+      "tipo": "Factura",
+      "descripcion": "Factura alargada con crema pastelera y dulce de membrillo",
+      "imagen": "Vigilante.jpg",
+      "precio": 10000
+    },
+    {
+      "nombre_producto": "Alfajor cordobés",
+      "categoria": "Masas",
+      "tipo": "Alfajor",
+      "descripcion": "Dos galletas suaves endulzadas con miel, unidas entre si por un relleno de dulce de leche repostero y cubiertas por un glaseado",
+      "imagen": "Alfajor cordobés.jpg",
+      "precio": 15000
+    },
+    {
+      "nombre_producto": "Alfajor de chocolate",
+      "categoria": "Masas",
+      "tipo": "Alfajor",
+      "descripcion": "Mini-alfajor compuesto por dos galletas pequeñas de chocolate, unidas entre si por un relleno de dulce de leche repostero y cubiertas por chcolate",
+      "imagen": "Alfajor de chocolate.jpg",
+      "precio": 12000
+    },
+    {
+      "nombre_producto": "Alfajor de maicena",
+      "categoria": "Masas",
+      "tipo": "Alfajor",
+      "descripcion": "Dos masas de fécula de maíz, unidas entre si por un relleno de dulce de leche repostero y espolvoreado con coco rallado",
+      "imagen": "Alfajor de maicena.jpg",
+      "precio": 12000
+    },
+    {
+      "nombre_producto": "Colación",
+      "categoria": "Masas",
+      "tipo": "Masa rellena",
+      "descripcion": "Base de galleta con dulce de leche repostero y cobertura de glaseado",
+      "imagen": "Colación.jpg",
+      "precio": 13000
+    },
+    {
+      "nombre_producto": "Carolinas",
+      "categoria": "Masas",
+      "tipo": "Masa rellena",
+      "descripcion": "Galleta húmeda rellena de dulce de leche repostero y con cobertura de chocolate",
+      "imagen": "Carolinas.jpg",
+      "precio": 10000
+    },
+    {
+      "nombre_producto": "Conito de dulce de leche",
+      "categoria": "Masas",
+      "tipo": "Especialidades dulces",
+      "descripcion": "Base de nuez con dulce de leche repostero en forma de cono y cobertura de chocolate",
+      "imagen": "Conito de dulce de leche.jpg",
+      "precio": 13000
+    },
+    {
+      "nombre_producto": "Nueces glaseadas",
+      "categoria": "Masas",
+      "tipo": "Especialidades dulces",
+      "descripcion": "Nuez con dulce de leche repostero, cubiertas de glaseado",
+      "imagen": "Nueces glaseadas.jpg",
+      "precio": 15000
+    },
+    {
+      "nombre_producto": "Pepas",
+      "categoria": "Masas",
+      "tipo": "Masas secas",
+      "descripcion": "Galleta con dulce de membrillo",
+      "imagen": "Pepas.jpg",
+      "precio": 11000
+    },
+    {
+      "nombre_producto": "Palmeritas",
+      "categoria": "Masas",
+      "tipo": "Masas secas",
+      "descripcion": "Masa dulce de hojaldre en forma de oreja",
+      "imagen": "Palmeritas.jpg",
+      "precio": 11000
+    },
+    {
+      "nombre_producto": "Anillos de maicena",
+      "categoria": "Masas",
+      "tipo": "Masas secas",
+      "descripcion": "masa de maicena en forma de anillo con cobertura de chocolate",
+      "imagen": "Anillos de maicena.jpg",
+      "precio": 11000
+    },
+    {
+      "nombre_producto": "Ojo de buey",
+      "categoria": "Masas",
+      "tipo": "Masas secas",
+      "descripcion": "Galletas rellenas con mermelada de frutilla",
+      "imagen": "Ojo de buey.jpg",
+      "precio": 11000
+    }
+  ]
+  
+  

@@ -1,0 +1,34 @@
+<%- include('../partials/head', { usuario: usuario }) %>
+
+<section class="login">
+    <img src="imagenes/Fondo formularios.jpg" alt="">
+
+    <div class="login-formulario">
+        <h2 class="loginTitulo">Iniciá sesión</h2>
+
+        <form action="/usuarios/sesionIniciada" method="post">
+            <!-- Mensaje de error si el usuario no existe -->
+            <% if (locals.errorUsuario) { %>
+                <p style="color: red;"><%= locals.errorUsuario %></p>
+            <% } %>
+            <label><i class="fas fa-user"></i></label>
+            <input type="text" name="username" placeholder="Usuario">
+            <!-- mensaje de error si la contraseña no es correcta -->
+            <% if (locals.errorContrasenia) { %>
+                <p style="color: red;"><%= locals.errorContrasenia %></p>
+            <% } %>
+            <label><i class="fas fa-lock"></i></label>
+            <div>
+                <input id="password" type="password" name="password" placeholder="Contraseña">
+                    <span id="cambiarPassword" class="cambiar-password"><i class="fas fa-eye"></i></span>
+            </div>
+            <button>Iniciar sesión</button>
+        </form>
+
+        <div class="linkLogin">
+            <p>¿No tenés cuenta? <a href="/usuarios/registro">Registrate acá</a></p>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer')%>
